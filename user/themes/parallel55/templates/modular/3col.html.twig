@@ -1,0 +1,24 @@
+<div style="background: #f6f6f6;" class="modular-row col3 {{ page.header.class}} ">
+<div class="container">
+{{content}}
+<div class="grid pure-g-r">
+    {% for p in page.children() %}
+    {% set image = p.media.images|first.grayscale() %}
+            <div  class="block size-1-3 pure-u-1-3">
+    <div class="cell-image" style="background:url({{ image.url }}) no-repeat center center; height:220px; background-size:cover;"></div> 
+            <h5>{{p.title}}</h5>
+
+            <div>
+            {{p.content}}
+            </div>
+            {% if p.button %}
+            <div>
+
+            <a class="button{% if p.button.primary %} primary{% endif %}" href="{{ p.button.url }}">{{ p.button.text }}</a>
+            </div>
+            {% endif %}
+            </div>
+    {% endfor %}
+    </div>
+    </div>
+</div>

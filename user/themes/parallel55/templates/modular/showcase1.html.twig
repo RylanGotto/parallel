@@ -1,0 +1,14 @@
+{% set showcase_image = page.media.images|first.grayscale().contrast(20).brightness(-120).colorize(248,208,160) %}
+{% if showcase_image %}
+	<div class="modular-row showcase flush-top" style="background-image: url({{ showcase_image.url }}); background-position: center center;">
+{% else %}
+<div class="modular-row showcase1">
+{% endif %}
+	<div style="" class="showcase-content">
+    {{ content }}
+    {% for button in page.header.buttons %}
+        <a class="button{% if button.primary %} primary{% endif %}" href="{{ button.url }}">{{ button.text }}</a>
+    {% endfor %}
+    </div>
+
+</div>

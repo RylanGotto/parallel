@@ -1,0 +1,11 @@
+email: rgotto2@gmail.com
+fullname: 'Reagan Glazier'
+title: Admin
+state: enabled
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$ZdfuZuVR0Ln6updXbZdxy.biRGD98H//X0GfG4w.7e9DYfXI2Kenm
